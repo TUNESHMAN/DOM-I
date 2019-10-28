@@ -41,6 +41,8 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
+// I ADDED CONTENTS FOR THE ANCHOR TAG
 const Anchor = document.getElementsByTagName('a');
 Anchor[0].textContent = 'Services';
 Anchor[1].textContent = 'Product';
@@ -48,6 +50,10 @@ Anchor[2].textContent = 'Vision';
 Anchor[3].textContent = 'Features';
 Anchor[4].textContent = 'About';
 Anchor[5].textContent = 'Contact';
+
+// I ADDED THE HEADER IMAGE
+const HeaderImage = document.getElementById('logo-img');
+HeaderImage.src = 'img/header-img.png'
 
 
 
