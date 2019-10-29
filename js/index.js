@@ -42,18 +42,61 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
-// I ADDED CONTENTS FOR THE ANCHOR TAG
-const Anchor = document.getElementsByTagName('a');
-Anchor[0].textContent = 'Services';
-Anchor[1].textContent = 'Product';
-Anchor[2].textContent = 'Vision';
-Anchor[3].textContent = 'Features';
-Anchor[4].textContent = 'About';
-Anchor[5].textContent = 'Contact';
+// MY CODE STARTS HERE
 
-// I ADDED THE HEADER IMAGE
-const HeaderImage = document.getElementById('logo-img');
-HeaderImage.src = 'img/header-img.png'
+const header = document.getElementsByTagName("header");
+const navigations = document.querySelector("nav");
+navigations.classList.add("green");
+const links = navigations.getElementsByTagName("a");
+links[0].textContent = siteContent.nav["nav-item-1"];
+links[1].textContent = siteContent.nav["nav-item-2"];
+links[2].textContent = siteContent.nav["nav-item-3"];
+links[3].textContent = siteContent.nav["nav-item-4"];
+links[4].textContent = siteContent.nav["nav-item-4"];
+links[5].textContent = siteContent.nav["nav-item-6"];
 
+// append item to the navigation bar
+const node = document.createElement("a"); // Create a <a> node
+const textnode = document.createTextNode("About us"); // Create a text node
+node.appendChild(textnode); // Append the text to <a>
+navigations.appendChild(node);
 
+// Prepend items to the navigation bar
+const newTag = document.createElement("a");
+const tagText = document.createTextNode("History");
+newTag.appendChild(tagText);
+navigations.insertBefore(newTag, links[2]);
 
+// Header section, Images and text
+const headerImg = document.getElementById("cta-img");
+const headerSection = document.getElementsByClassName("cta-text");
+const heading = document.getElementsByTagName("h1");
+const text = (heading[0].textContent = siteContent.cta.h1);
+document.getElementsByTagName("button")[0].textContent = siteContent.cta.button;
+
+headerImg.src = siteContent.cta["img-src"];
+
+// Second section
+const headingH4 = document.querySelectorAll("h4");
+const paragraphs = document.querySelectorAll("p");
+headingH4[0].textContent = siteContent["main-content"]["features-h4"];
+headingH4[1].textContent = siteContent["main-content"]["about-h4"];
+headingH4[2].textContent = siteContent["main-content"]["services-h4"];
+headingH4[3].textContent = siteContent["main-content"]["product-h4"];
+headingH4[4].textContent = siteContent["main-content"]["vision-h4"];
+paragraphs[0].textContent = siteContent["main-content"]["features-content"];
+paragraphs[1].textContent = siteContent["main-content"]["about-content"];
+paragraphs[2].textContent = siteContent["main-content"]["services-content"];
+paragraphs[3].textContent = siteContent["main-content"]["product-content"];
+paragraphs[4].textContent = siteContent["main-content"]["vision-content"];
+const mainSectionImg = (document.getElementById("middle-img").src =
+  siteContent["main-content"]["middle-img-src"]);
+
+// Contact
+headingH4[5].textContent = siteContent.contact["contact-h4"];
+paragraphs[5].textContent = siteContent.contact.address;
+paragraphs[6].textContent = siteContent.contact.phone;
+paragraphs[7].textContent = siteContent.contact.email;
+
+// Footer
+paragraphs[8].textContent = siteContent.footer.copyright;
